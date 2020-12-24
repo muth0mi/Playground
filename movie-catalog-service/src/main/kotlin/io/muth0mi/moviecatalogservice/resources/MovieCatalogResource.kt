@@ -11,7 +11,6 @@ class MovieCatalogResource {
 
     @RequestMapping("/{userId}")
     fun getCatalog(@PathVariable userId: String): List<CatalogItem> {
-
         return listOf(
             CatalogItem("Transformers", "Test", 4)
         )
