@@ -13,4 +13,12 @@ class ratingResource {
     fun getRating(@PathVariable movieId: String): Rating {
         return Rating(movieId, 4)
     }
+
+    @RequestMapping("/users/{userId}")
+    fun getUserRating(@PathVariable userId: String): List<Rating> {
+        return listOf(
+            Rating("1234", 4),
+            Rating("5678", 3)
+        )
+    }
 }
