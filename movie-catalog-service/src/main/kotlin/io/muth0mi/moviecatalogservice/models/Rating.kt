@@ -1,4 +1,4 @@
-package io.muth0mi.ratingsdataservice.models
+package io.muth0mi.moviecatalogservice.models
 
 data class Rating(
     var movieId: String,
