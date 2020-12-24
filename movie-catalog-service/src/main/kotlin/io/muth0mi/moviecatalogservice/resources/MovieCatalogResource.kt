@@ -18,7 +18,7 @@ class MovieCatalogResource {
     private lateinit var restTemplate: RestTemplate
 
     @Autowired
-    private lateinit var webClientBuilder: WebClient.Builder
+//    private lateinit var webClientBuilder: WebClient.Builder
 
     @RequestMapping("/{userId}")
     fun getCatalog(@PathVariable userId: String): List<CatalogItem> {
@@ -30,12 +30,17 @@ class MovieCatalogResource {
 
         val catalogItems = arrayListOf<CatalogItem>()
         ratings.forEach { rating ->
+
+            /*
             val movie = webClientBuilder.build()
                 .get()
                 .uri("http://localhost:8081/movies/${rating.movieId}")
                 .retrieve()
                 .bodyToMono(Movie::class.java)
                 .block()
+            */
+
+            val movie = restTemplate.getForObject("http://localhost:8081/movies/${rating.movieId}", Movie::class.java)
 
             movie?.let {
                 catalogItems.add(CatalogItem(movie.name, "Test", rating.rating))
