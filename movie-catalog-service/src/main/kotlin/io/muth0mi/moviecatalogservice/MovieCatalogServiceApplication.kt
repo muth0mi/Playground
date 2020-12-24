@@ -11,9 +11,6 @@ class MovieCatalogServiceApplication {
 
     @Bean
     fun getRestTemplate() = RestTemplate()
-
-//    @Bean
-//    fun getWebClientBuilder() = WebClient.builder()
 }
 
 fun main(args: Array<String>) {

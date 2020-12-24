@@ -1,6 +1,7 @@
 package io.muth0mi.ratingsdataservice.resources
 
 import io.muth0mi.ratingsdataservice.models.Rating
+import io.muth0mi.ratingsdataservice.models.UserRating
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
@@ -15,10 +16,12 @@ class ratingResource {
     }
 
     @RequestMapping("/users/{userId}")
-    fun getUserRating(@PathVariable userId: String): List<Rating> {
-        return listOf(
-            Rating("1234", 4),
-            Rating("5678", 3)
+    fun getUserRating(@PathVariable userId: String): UserRating {
+        return UserRating(
+            listOf(
+                Rating("1234", 4),
+                Rating("5678", 3)
+            )
         )
     }
 }
