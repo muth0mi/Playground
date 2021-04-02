@@ -1,0 +1,49 @@
+POST http://127.0.0.1:8080/customers
+Content-Type: application/json
+
+{
+  "id": 1,
+  "firstName": "Jane",
+  "lastName": "Smith",
+  "email": "jane.smith@company.com"
+}
+
+
+###
+POST http://127.0.0.1:8080/customers
+Content-Type: application/json
+
+{
+  "id": "2",
+  "firstName": "John",
+  "lastName": "Smith",
+  "email": "john.smith@company.com"
+}
+
+###
+POST http://127.0.0.1:8080/customers
+Content-Type: application/json
+
+{
+  "id": "3",
+  "firstName": "Mary",
+  "lastName": "Smith",
+  "email": "mary.smith@company.com"
+}
+
+
+###
+GET http://127.0.0.1:8080/customers
+Accept: application/json
+
+###
+GET http://127.0.0.1:8080/customers/1
+
+###
+GET http://127.0.0.1:8080/customers/5
+
+###
+DELETE http://127.0.0.1:8080/customers/1
+
+###
+DELETE http://127.0.0.1:8080/customers/5
